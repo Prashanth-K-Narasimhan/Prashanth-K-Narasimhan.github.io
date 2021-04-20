@@ -4,7 +4,7 @@
 const musicHelper = (function () {
   let wrap = document.querySelector('#player');
   let button = wrap ? wrap.querySelector('button') : null;
-  let audio = new Audio('http://prashanth-k-narasimhan.github.io/assets/mp3/GiveEmTheLove-DrDisrespect.mp3');
+  let audio = new Audio('http://prashanth-k-narasimhan.github.io/assets/mp3/1.mp3');
   let step = 0.01;
   let active = false;
   let sto = null;
@@ -12,7 +12,7 @@ const musicHelper = (function () {
   let fadeIn = () => {
     audio.volume += 0.01;
     if (audio.volume >= 0.2) { audio.volume = 0.2; return; }
-    sto = setTimeout(fadeIn, 100);
+    sto = setTimeout(fadeIn, 6);
   };
 
   let fadeOut = () => {
@@ -21,17 +21,13 @@ const musicHelper = (function () {
     sto = setTimeout(fadeOut, 100);
   };
 
-  audio.addEventListener('ended', function () {
-    this.currentTime = 0;
-    this.play();
-  }, false);
-  audio.play();
-
   let play = () => {
     if (sto) clearTimeout(sto);
-    // audio.currentTime = 22
+    // audio.currentTime = 24
+    audio.currentTime = 24
     active = true;
     button.textContent = 'Stop music';
+    audio.loop = true;
     audio.play();
     fadeIn();
   };
@@ -53,5 +49,7 @@ const musicHelper = (function () {
   audio.preload = 'auto';
   audio.muted = false;
   audio.volume = 0;
+
   return { play, stop };
 })();
+
