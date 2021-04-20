@@ -4,7 +4,7 @@
 const musicHelper = (function () {
   let wrap = document.querySelector('#player');
   let button = wrap ? wrap.querySelector('button') : null;
-  let audio = new Audio('https://cf-media.sndcdn.com/JIww42sYRuTW.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vSkl3dzQyc1lSdVRXLjEyOC5tcDMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTg4NDQ4ODR9fX1dfQ__&Signature=An7~Q9HqLQe92s6k9Cwreqt1214luWVuw3Xlgq0Q396HEuSrZqYecNoM5kjNqNPrgh0LwCVilVhH8-mNsUK~0KjjVM1weJLxjNHT13B9tyKPYuSGHd0tzYuxPlCfLH0k6MDkE~PekVVwJ1oHBW29iEtGogldAiAcgGkjPqgGp6y7f6LdRNU1PG9JM6tfziRWeq687P70~o71OoHzUGujYLYVrwWsq2fBfjRP97PLxIUYmh58RN59Wp7p~WMGhM6u1O9e0m4vmbW~Ax-I50MWiF2sUidDHBf3XOr8IGlFtPU8nPXsF5evdQVsaC~km6k2E28C3GmQZqvckyr7Zh9fLA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ');
+  let audio = new Audio('http://prashanth-k-narasimhan.github.io/assets/mp3/GiveEmTheLove-DrDisrespect.mp3');
   let step = 0.01;
   let active = false;
   let sto = null;
@@ -21,9 +21,15 @@ const musicHelper = (function () {
     sto = setTimeout(fadeOut, 100);
   };
 
+  audio.addEventListener('ended', function () {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+  audio.play();
+
   let play = () => {
     if (sto) clearTimeout(sto);
-    audio.currentTime = 22
+    // audio.currentTime = 22
     active = true;
     button.textContent = 'Stop music';
     audio.play();
