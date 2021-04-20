@@ -4,7 +4,8 @@
 const musicHelper = (function () {
   let wrap = document.querySelector('#player');
   let button = wrap ? wrap.querySelector('button') : null;
-  let audio = new Audio('http://prashanth-k-narasimhan.github.io/assets/mp3/1.mp3');
+  // let audio = new Audio('http://prashanth-k-narasimhan.github.io/assets/mp3/1.mp3');
+  let audio = new Audio('http://raw.githubusercontent.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/master/assets/mp3/1.mp3');
   let step = 0.01;
   let active = false;
   let sto = null;
