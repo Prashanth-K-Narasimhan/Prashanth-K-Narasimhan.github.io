@@ -1,0 +1,514 @@
+/*
+* StyleCss
+*/
+.debug{
+	border:1px solid red;
+}
+/* variables */
+$graylight: #d5d5d5;
+$graylight2: #ebebeb;
+$red: #e81c36;
+html {
+	height: 100%
+}
+body {
+	font-family: Arial;
+	background-color: #fff;
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+ul.list-inline li {
+	display: inline;
+}
+/* reset bootstrap */
+.container, .container-fluid{
+	padding:0;
+	margin:0;
+}
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.clear{
+	clear:both;
+	height:1px;
+	margin:0;
+	padding:0;
+	font-size:1px;
+	line-height:0
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.img100{
+	width: 100%;
+}
+/* custom */
+.inner{
+	max-width: 1003px;
+	margin:0 auto;
+}
+.bg-white{
+	background-color: white;
+}
+/**********************************************************
+* FONTS
+***********************************************************/
+@font-face {
+  font-family: 'BentonSans';
+  src: url('../fonts/BentonSans/BentonSans-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans/BentonSans-Regular.otf')  format('opentype'),
+	     url('../fonts/BentonSans/BentonSans-Regular.woff') format('woff'), url('../fonts/BentonSans/BentonSans-Regular.ttf')  format('truetype'), url('../fonts/BentonSans/BentonSans-Regular.svg#BentonSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+	font-family: 'BentonSans-Black';
+	src: url('../fonts/BentonSans-Black/BentonSans-Black.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-Black/BentonSans-Black.otf')  format('opentype'),
+	url('../fonts/BentonSans-Black/BentonSans-Black.woff') format('woff'), url('../fonts/BentonSans-Black/BentonSans-Black.ttf')  format('truetype'), url('../fonts/BentonSans-Black/BentonSans-Black.svg#BentonSans-Black') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'BentonSans-Bold';
+	src: url('../fonts/BentonSans-Bold/BentonSans-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-Bold/BentonSans-Bold.otf')  format('opentype'),
+	url('../fonts/BentonSans-Bold/BentonSans-Bold.woff') format('woff'), url('../fonts/BentonSans-Bold/BentonSans-Bold.ttf')  format('truetype'), url('../fonts/BentonSans-Bold/BentonSans-Bold.svg#BentonSans-Bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'BentonSans-Book';
+  src: url('../fonts/BentonSans-Book/BentonSans-Book.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-Book/BentonSans-Book.otf')  format('opentype'),
+	     url('../fonts/BentonSans-Book/BentonSans-Book.woff') format('woff'), url('../fonts/BentonSans-Book/BentonSans-Book.ttf')  format('truetype'), url('../fonts/BentonSans-Book/BentonSans-Book.svg#BentonSans-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BentonSans-ExtraLight';
+  src: url('../fonts/BentonSans-ExtraLight/BentonSans-ExtraLight.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-ExtraLight/BentonSans-ExtraLight.otf')  format('opentype'),
+	     url('../fonts/BentonSans-ExtraLight/BentonSans-ExtraLight.woff') format('woff'), url('../fonts/BentonSans-ExtraLight/BentonSans-ExtraLight.ttf')  format('truetype'), url('../fonts/BentonSans-ExtraLight/BentonSans-ExtraLight.svg#BentonSans-ExtraLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BentonSans-Light';
+  src: url('../fonts/BentonSans-Light/BentonSans-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-Light/BentonSans-Light.otf')  format('opentype'),
+	     url('../fonts/BentonSans-Light/BentonSans-Light.woff') format('woff'), url('../fonts/BentonSans-Light/BentonSans-Light.ttf')  format('truetype'), url('../fonts/BentonSans-Light/BentonSans-Light.svg#BentonSans-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BentonSans-Medium';
+  src: url('../fonts/BentonSans-Medium/BentonSans-Medium.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-Medium/BentonSans-Medium.otf')  format('opentype'),
+	     url('../fonts/BentonSans-Medium/BentonSans-Medium.woff') format('woff'), url('../fonts/BentonSans-Medium/BentonSans-Medium.ttf')  format('truetype'), url('../fonts/BentonSans-Medium/BentonSans-Medium.svg#BentonSans-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BentonSans-Thin';
+  src: url('../fonts/BentonSans-Thin/BentonSans-Thin.eot?#iefix') format('embedded-opentype'),  url('../fonts/BentonSans-Thin/BentonSans-Thin.otf')  format('opentype'),
+	     url('../fonts/BentonSans-Thin/BentonSans-Thin.woff') format('woff'), url('../fonts/BentonSans-Thin/BentonSans-Thin.ttf')  format('truetype'), url('../fonts/BentonSans-Thin/BentonSans-Thin.svg#BentonSans-Thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CorradineHandwriting';
+  src: url('../fonts/CorradineHandwriting/CorradineHandwriting.eot?#iefix') format('embedded-opentype'),  url('../fonts/CorradineHandwriting/CorradineHandwriting.otf')  format('opentype'),
+	     url('../fonts/CorradineHandwriting/CorradineHandwriting.woff') format('woff'), url('../fonts/CorradineHandwriting/CorradineHandwriting.ttf')  format('truetype'), url('../fonts/CorradineHandwriting/CorradineHandwriting.svg#CorradineHandwriting') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/**********************************************************
+* HEADER
+***********************************************************/
+header .header-social {
+	ul{
+		/*width: 200px;*/
+		float: right;
+		margin-top:14px;
+		margin-right: 21px;
+	}
+	ul li {
+		display: inline;
+		margin: 0 6px;
+	}
+}
+.header-logo{
+	text-align: center;
+}
+nav .header-menu{
+	display: block;
+	float: left;
+	text-align: right;
+	height: 50px;
+	width: 72%;;
+	ul li {
+		display: inline;
+		margin: 0 19px;
+		line-height: 36px;
+		a{
+			font-size: 12px;
+			font-family: 'BentonSans';
+			font-weight: 600;
+			color:black;
+			text-decoration: none;
+		}
+		a:hover{
+			// height: 4px;
+			// margin-bottom: 20px;
+			// border-bottom: 4px solid red;
+			// padding-bottom: 21px;
+		}
+	}
+	ul li.active{
+		content: '';
+		height: 4px;
+		margin-bottom: 20px;
+		border-bottom: 4px solid red;
+		padding-bottom: 21px;
+		a{
+			color:#999;
+		}
+	}
+}
+nav .header-menu-find{
+	display: block;
+	float: right;
+	border: 1px solid $graylight;;
+	form input {
+		border: 0px solid transparent;
+		float:left;
+		height: 29px;
+		float: left;
+		padding: 0 7px;
+		margin: 0;
+		margin-top: 4px;
+	}
+	form input:focus {
+		outline: 0;
+	}
+	form span.searchgrayLine{
+		margin-top: 12px;
+	}
+	form button{
+		background-color: transparent;
+		border: 0px solid transparent;
+		margin-top: 10px;
+		width: 30px;
+		height: 23px;
+		span{
+			margin-left: 4px;
+			// line-height: 12px;
+		}
+	}
+}
+.featured-home-box{
+	img {
+		width: 100%;
+	}
+}
+.featured-description{
+	text-align: center;
+	margin-top:16px;
+	p.category{
+		font-family: 'CorradineHandwriting';
+		font-size:24px;
+	}
+	h2{
+		color: black;
+		font-family: 'BentonSans';
+		font-size: 24px;
+		font-weight: 700;
+		margin-top: 0px;
+	}
+	p.author{
+		color: #666;
+		font-family: Arial;
+		font-size: 12px;
+		span[rel=author]{
+			color: black;
+			font-weight: 700;
+			font-style: italic;
+			cursor: default;
+			text-decoration: none;
+		}
+	}
+	p.mini-description{
+		padding: 0px 17%;
+		line-height: 2.2em;
+		color: black;
+		font-size: 14px;
+		text-align: justify;
+	}
+	div.share-post{
+		margin-top: 27px;
+		margin-bottom: 38px;
+	}
+}
+
+.read-more{
+	color: $red;
+	font-weight: bold;
+}
+/**********************************************************
+* BODY
+***********************************************************/
+.featured-home-box{
+	text-align: center;
+	.featured-image{
+		/*min-height: 600px;*/
+	}
+}
+.ico-arrow{
+	position: absolute;
+    margin-top: -100px;
+}
+.bg-content{
+	background-image: url('../images/bg-content.png');
+	background-size: 100% auto;
+	background-repeat: repeat-y;
+
+	// background-image: url('../images/bg-content.png'), url('../images/bg-content.png'), url('../images/bg-content.png');
+	// background-repeat: no-repeat, no-repeat, no-repeat;
+	// background-position: 0 top, 0 top, 0 top;
+}
+.featured-home-box-mini{
+	text-align: center;
+	h2{
+		font-size: 18px;
+		line-height: 24px;
+	}
+	.featured-description p.mini-description{
+		padding: 0px 2%;
+		text-align: justify;
+	}
+	.featured-description div.share-post{
+		margin-bottom: 23px;
+	}
+	.featured-description p.mini-description{
+		font-size: 12px;
+	}
+}
+.box-min-left{
+	margin: 0;
+	padding: 0 9px 0 0;
+}
+.box-min-right{
+	margin: 0;
+	padding: 0 0 0 9px;
+}
+.paginator{
+	background-color: white;
+	padding: 4.5% 0 4.5% 0;
+	margin: 0;
+	.counter{
+		text-align: center;
+		color: #a5a5a5;
+		font-family: 'BentonSans';
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 24px;
+		padding: 15px 0 0 0;
+		ul li{
+			padding: 0 14px;;
+			margin: 0
+		}
+		ul li a{
+			color: #a5a5a5;
+			font-weight: bold;
+		}
+		ul li a.active{
+			color: black;
+		}
+	}
+	.btn-prev, .btn-next{
+		color: white;
+		font-family: 'BentonSans';
+		font-weight: 500;
+		font-size: 12px;
+		background-color: #b3b3b3;
+		border:0;
+		padding: 15px 25px;
+	}
+	.btn-prev:before {
+		content: "";
+		background: url('../images/sprite-esika.png');
+		background-repeat: no-repeat;
+		display: inline-block;
+		background-position: -210px -85px;
+		width: 7px;
+		height: 11px;
+		float: left;
+		margin: 2px 20px 0 0;
+	}
+	.btn-next{
+		background-color: black;
+		float: right;
+	}
+	.btn-next::after {
+		content: "";
+		background: url('../images/sprite-esika.png');
+		background-repeat: no-repeat;
+		display: inline-block;
+		background-position: -217px -85px;
+		width: 7px;
+		height: 11px;
+		float: right;
+		margin: 2px 0 0 20px;;
+
+	}
+}
+/**********************************************************
+* FOOTER
+***********************************************************/
+.footer-box-gray{
+	// background-color: $graylight2;
+	background-image: url('../images/bg-footer.jpg');
+}
+.footer-box-black{
+	background-color: black;
+}
+.footer-box-black-content{
+	text-align: center;
+	max-width: 725px;
+	margin: 0 auto;
+	color: #999;
+	font-family: 'BentonSans';
+	font-size: 11px;
+	font-weight: 300;
+	padding: 50px 0 30px 0;
+}
+.most-view {
+	padding: 1.5% 1% 3% 1%;
+	text-align: center;
+	ul li {
+		display: block;
+
+	}
+	h2{
+		font-family: 'BentonSans';
+		font-size: 14px;
+		font-weight: bold;
+		padding-left: 2.1%;
+		text-align: left;
+		color:black;
+	}
+	h3{
+		font-size: 13px;
+		text-align: left;
+		padding-left: 10%;
+		margin-top: 10px;
+		font-weight: normal;
+		color: black;
+	}
+}
+.title-instagram{
+	width: 200px;
+	margin: 0 auto;
+	background: white;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Times New Roman';
+	padding: 15px 33px;
+	position: relative;
+	top: 55px;
+	font-weight: 600;
+	color: black;;
+}
+/**********************************************************
+* SPRITES
+***********************************************************/
+.spt1 {
+	background-image: url('../images/sprite-esika.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+.spt1.logo{
+	background-position: 0px 0px;
+	height: 85px;
+	width: 283px;
+}
+.spt1.fb{
+	background-position: 0px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.tw{
+	background-position: -16px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.in{
+	background-position: -32px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.yt{
+	background-position: -48px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.pt{
+	background-position: -80px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.gplus{
+	background-position: -64px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.fbgray{
+	background-position: -96px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.twgray{
+	background-position: -112px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.ingray{
+	background-position: -128px -85px;
+	height: 12px;
+	width: 16px;
+}
+.spt1.ytgray{
+	background-position: -144px -85px;
+	height: 12px;
+	width: 16px;
+}
+
+.spt1.searchgray{
+	background-position: -194px -85px;
+	height: 12px;
+	width: 14px;
+}
+.spt1.searchgrayLine{
+	background-position: -192px -85px;
+	height: 11px;
+	width: 1px;
+}
+.spt1.logoEsikagray{
+	background-position: -101px -97px;
+	height: 35px;
+	width: 86px;
+}
+.spt1.homeArrow{
+	background-position: 0px -97px;
+	height: 61px;
+	width: 61px;
+}
+.spt1.lineVerticalBlackWhite{
+	background-position: -208px -85px;
+	height: 11px;
+	width: 2px;
+	margin-bottom: -1px;
+	margin-left: 1em;
+	margin-right: 1em;
+}

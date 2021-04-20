@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'BentonSans-Thin';
+  src: url('BentonSans-Thin.eot?#iefix') format('embedded-opentype'),  url('BentonSans-Thin.otf')  format('opentype'),
+	     url('BentonSans-Thin.woff') format('woff'), url('BentonSans-Thin.ttf')  format('truetype'), url('BentonSans-Thin.svg#BentonSans-Thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
