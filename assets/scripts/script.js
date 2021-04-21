@@ -43,8 +43,14 @@ const musicHelper = (function () {
   button.addEventListener('click', e => {
     e.stopPropagation();
     e.preventDefault();
-    if (active) { stop(); }
-    else { play(); }
+    if (active) {
+      stop();
+      $('#pepega').hide();
+    }
+    else {
+      play();
+      $('#pepega').show();
+    }
   });
 
   audio.preload = 'auto';

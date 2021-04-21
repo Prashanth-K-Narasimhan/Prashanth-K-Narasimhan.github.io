@@ -191,7 +191,7 @@ nav .header-menu-find {
 
 .featured-description {
   text-align: center;
-  margin-top: 12px; }
+  margin-top: 0px; }
   .featured-description p.category {
     font-family: 'CorradineHandwriting';
     font-size: 24px; }
@@ -341,7 +341,7 @@ nav .header-menu-find {
   font-family: 'BentonSans';
   font-size: 11px;
   font-weight: 300;
-  padding: 0 0 10px 0; }
+  padding: 0 0 0 0; }
 
 .most-view {
   padding: 1.5% 1% 3% 1%;
@@ -548,16 +548,13 @@ nav .header-menu-find {
 .input-text {
   /* background: #000000; */
   overflow: hidden;
-  direction: ltr;
-  /* position: absolute; */
-  /* top: 348px; */
-  /* left: 418px; */
+  direction: rtl;
   width: 289px;
-  height: 166px;
+  height: 100px;
   margin: 0 auto;
-  margin-top: 240px;
+  margin-top: 200px;
   /* padding: 0.75rem 1rem; */
-  border-radius: 2px;
+  /* border-radius: 2px; */
   /* border: 1px solid #ccc; */
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -565,13 +562,14 @@ nav .header-menu-find {
 /*  */
 
 .message{
-  color: lime; 
+  color: #14fdce; 
   overflow: hidden;
-  font-family: "Courier";
-  font-size: 12px;
-  margin: 10px 0 0 10px;
+  font-family: "VT323";
+  font-size: 16px;
+  /* margin: 10px 0 0 10px; */
+  margin: 0;
   white-space: nowrap;
-  width: 30em;
+  width: 289px;
   animation: type 4s steps(60, end); 
 }
 
@@ -580,7 +578,7 @@ nav .header-menu-find {
 }
 
 .message a{
-  color: lime;
+  color: #14fdce;
   text-decoration: none;
 }
 
@@ -651,6 +649,7 @@ path:nth-child(13) { animation-delay: 6.5s }
 /*  */
 
 .pepega {
+  display: none;
   position: absolute;
   right: 40px;
   bottom: 50px;
