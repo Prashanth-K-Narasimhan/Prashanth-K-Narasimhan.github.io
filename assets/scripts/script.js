@@ -61,19 +61,65 @@ const musicHelper = (function () {
 })();
 
 // Audio player functionality
-let audioPlayer = document.getElementById('audioPlayer');
-let isPlaying = false;
+const musicPlayer = (function() {
+    const audio = new Audio('assets/audio/background-music.mp3');
+    const button = document.querySelector('.play');
+    const pepega = document.getElementById('pepega');
+    let isPlaying = false;
+    let fadeTimeout = null;
 
-function togglePlay() {
-    if (isPlaying) {
-        audioPlayer.pause();
-        document.querySelector('.play').textContent = 'Play music';
-    } else {
-        audioPlayer.play();
-        document.querySelector('.play').textContent = 'Pause music';
+    function fadeIn() {
+        audio.volume += 0.01;
+        if (audio.volume >= 0.2) {
+            audio.volume = 0.2;
+            return;
+        }
+        fadeTimeout = setTimeout(fadeIn, 6);
     }
-    isPlaying = !isPlaying;
-}
+
+    function fadeOut() {
+        audio.volume -= 0.02;
+        if (audio.volume <= 0.01) {
+            audio.volume = 0;
+            audio.pause();
+            return;
+        }
+        fadeTimeout = setTimeout(fadeOut, 100);
+    }
+
+    function togglePlay() {
+        if (fadeTimeout) clearTimeout(fadeTimeout);
+        
+        if (isPlaying) {
+            audio.pause();
+            button.textContent = 'Play music';
+            if (pepega) pepega.style.display = 'none';
+        } else {
+            audio.currentTime = 0;
+            audio.play();
+            button.textContent = 'Pause music';
+            if (pepega) pepega.style.display = 'block';
+            fadeIn();
+        }
+        isPlaying = !isPlaying;
+    }
+
+    // Initialize audio settings
+    audio.preload = 'auto';
+    audio.muted = false;
+    audio.volume = 0;
+    audio.loop = true;
+
+    // Add event listener to button
+    if (button) {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            togglePlay();
+        });
+    }
+
+    return { togglePlay };
+})();
 
 // Floating animation for the pepega image
 document.addEventListener('DOMContentLoaded', function() {
@@ -90,11 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
