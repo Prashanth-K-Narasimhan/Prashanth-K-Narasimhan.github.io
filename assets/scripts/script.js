@@ -60,3 +60,41 @@ const musicHelper = (function () {
   return { play, stop };
 })();
 
+// Audio player functionality
+let audioPlayer = document.getElementById('audioPlayer');
+let isPlaying = false;
+
+function togglePlay() {
+    if (isPlaying) {
+        audioPlayer.pause();
+        document.querySelector('.play').textContent = 'Play music';
+    } else {
+        audioPlayer.play();
+        document.querySelector('.play').textContent = 'Pause music';
+    }
+    isPlaying = !isPlaying;
+}
+
+// Floating animation for the pepega image
+document.addEventListener('DOMContentLoaded', function() {
+    const pepega = document.getElementById('pepega');
+    if (pepega) {
+        pepega.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        pepega.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    }
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+

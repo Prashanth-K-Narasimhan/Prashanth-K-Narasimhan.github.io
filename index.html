@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title class="logo">Portfolio</title>
+	<link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="noisy">
 	<div class="emblem"><span class="icon-information"></span></div>
 	<div class="frame">
 		<div class="piece output">
@@ -25,53 +29,50 @@
 					<li><a href="pages/contact.html">Contact</a></li>
 				</ul>
 			</div> <!-- .navbar-collapse -->
-			<header>
-			</header>
 
-			<body class="noisy">
-				<div class="pepega" id="pepega">
-					<img src="assets/images/tenor.gif" width="200" height="100" class="img-responsive floater" />
-					<a href="#">
-						<span class="spt1 homeArrow ico-arrow">&nbsp;</span>
-					</a>
-				</div>
-				<div class="text-block inner featured-description">
-					<div class="logo"><b>Prashant<span>h</span> Narasim<span>h</span>an . K</b></div>
-				</div>
-				<div class="input-text">
+			<div class="pepega" id="pepega">
+				<img src="assets/images/tenor.gif" width="200" height="100" class="img-responsive floater" />
+				<a href="#">
+					<span class="spt1 homeArrow ico-arrow">&nbsp;</span>
+				</a>
+			</div>
 
-					<p class="message">Chiang Mai, Thailandtdhtfffjhfhgjjh &nbsp;<span></span></p>
-					<p class="message">Chiang Mai, Thailand &nbsp;<span></span></p>
+			<div class="text-block inner featured-description">
+				<div class="logo"><b>Prashant<span>h</span> Narasim<span>h</span>an . K</b></div>
+			</div>
 
-				</div>
+			<div class="input-text">
+				<p class="message">Chiang Mai, Thailand &nbsp;<span></span></p>
+				<p class="message">Software Developer &nbsp;<span></span></p>
+			</div>
 
-				<div class="inner featured-description">
-					<div class="share-post">
-						<ul class="list-inline">
-							<li><a href="#" class="spt1 fa fa-github-square" style="font-size:36px"></a></li>
-							<li><a href="#" class="spt1 fa fa-linkedin" style="font-size:36px"></a></li>
-							<li><a href="#" class="spt1 fa fa-stack-overflow" style="font-size:36px"></a></li>
-							<li><a href="#" class="spt1 fa fa-envelope" style="font-size:36px"></a></li>
-						</ul>
-					</div>
+			<div class="inner featured-description">
+				<div class="share-post">
+					<ul class="list-inline">
+						<li><a href="#" class="spt1 fa fa-github-square" style="font-size:36px"></a></li>
+						<li><a href="#" class="spt1 fa fa-linkedin" style="font-size:36px"></a></li>
+						<li><a href="#" class="spt1 fa fa-stack-overflow" style="font-size:36px"></a></li>
+						<li><a href="#" class="spt1 fa fa-envelope" style="font-size:36px"></a></li>
+					</ul>
 				</div>
-			</body>
+			</div>
 
 			<footer>
 				<section class="player" id="player">
 					<div class="fa fa-music"></div>
 					<div class="content" id="musicPlayer">
+						<audio id="audioPlayer" src="assets/audio/background-music.mp3" loop></audio>
 						Music Player <br />
 						Station: Give 'Em the Love <br />
 						Artist: J+1 <br />
-						<button class="play">Play music</button>
+						<button class="play" onclick="togglePlay()">Play music</button>
 					</div>
 				</section>
 				<div class="footer">
 					<div class="footer-box-black">
 						<div class="footer-box-black-content">
 							<p>
-								<small>&copy; Copyright 2021, Prashanth Narasimhan, India, Inc. All Rights
+								<small>&copy; Copyright 2024, Prashanth Narasimhan, India, Inc. All Rights
 									Reserved.</small>
 							</p>
 						</div>
@@ -80,13 +81,7 @@
 			</footer>
 		</div>
 	</div>
-	</div>
 
-	<link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css" media="screen" title="no title"
-		charset="utf-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/app.css">
-	<link rel="stylesheet" href="assets/css/style.css">
 	<script type="text/javascript" src="assets/js/jquery-2.2.4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 	<script src="assets/scripts/script.js"></script>
