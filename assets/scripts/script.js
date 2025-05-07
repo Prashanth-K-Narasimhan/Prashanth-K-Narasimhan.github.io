@@ -121,8 +121,33 @@ const musicPlayer = (function() {
     return { togglePlay };
 })();
 
-// Floating animation for the pepega image
+// Initialize navigation and UI elements
 document.addEventListener('DOMContentLoaded', function() {
+    // Fix navigation links
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    });
+
+    // Fix social media links
+    const socialLinks = document.querySelectorAll('.share-post a');
+    socialLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                window.open(href, '_blank');
+            }
+        });
+    });
+
+    // Floating animation for the pepega image
     const pepega = document.getElementById('pepega');
     if (pepega) {
         pepega.addEventListener('mouseover', function() {
@@ -130,6 +155,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         pepega.addEventListener('mouseout', function() {
             this.style.transform = 'scale(1)';
+        });
+    }
+
+    // Fix back button in other pages
+    const backLink = document.querySelector('a[href="../index.html"]');
+    if (backLink) {
+        backLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = this.getAttribute('href');
         });
     }
 });
