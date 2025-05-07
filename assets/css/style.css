@@ -8,12 +8,12 @@
   box-sizing: border-box;
 }
 body {
-  background: #383838;
-  color: #14fdce;
-  font-family: 'VT323';
-  font-size: 24px;
-  -webkit-font-smoothing: none;
-  line-height: 1.2;
+  background: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 h1 {
   font-size: 4rem;
@@ -73,23 +73,11 @@ button {
   pointer-events: none;
 }
 .frame {
-  overflow: hidden;
-  background-color: transparent;
-  border-radius: 2rem;
-  border: 1rem solid;
-  border-bottom-color: #121212;
-  border-left-color: #080808;
-  border-right-color: #080808;
-  border-top-color: #020202;
-  box-shadow: inset 0 0 18rem black,
-    inset 0 0 3rem black,
-    0 0 10rem black;
-  height: 96%;
-  position: absolute;
-  top: 2%;
-  left: 2%;
-  width: 96%;
-  pointer-events: none;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .emblem {
   display: none;
