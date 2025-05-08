@@ -17,34 +17,28 @@
 					aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 				</button>
-			</div> <!-- .navbar-header -->
+			</div>
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="pages/about.html">About</a></li>
 					<li><a href="pages/portfolio.html">Portfolio</a></li>
 					<li><a href="pages/contact.html">Contact</a></li>
 				</ul>
-			</div> <!-- .navbar-collapse -->
-			<header>
-			</header>
+			</div>
+			<header></header>
 
 			<body class="noisy">
 				<div class="pepega" id="pepega">
 					<img src="assets/images/tenor.gif" width="200" height="100" class="img-responsive floater" />
-					<a href="#">
-						<span class="spt1 homeArrow ico-arrow">&nbsp;</span>
-					</a>
+					<a href="#"><span class="spt1 homeArrow ico-arrow">&nbsp;</span></a>
 				</div>
 				<div class="text-block inner featured-description">
 					<div class="logo"><b>Prashant<span>h</span> Narasim<span>h</span>an . K</b></div>
 				</div>
 				<div class="input-text">
-
 					<p class="message">Chiang Mai, Thailandtdhtfffjhfhgjjh &nbsp;<span></span></p>
 					<p class="message">Chiang Mai, Thailand &nbsp;<span></span></p>
-
 				</div>
-
 				<div class="inner featured-description">
 					<div class="share-post">
 						<ul class="list-inline">
@@ -55,6 +49,30 @@
 						</ul>
 					</div>
 				</div>
+
+				<!-- ✅ Domain Validation Viewer Section -->
+				<section class="validation-file">
+					<h2>Domain Validation File Content</h2>
+					<pre id="file-content">Loading...</pre>
+
+					<script>
+						fetch('.well-known/pki-validation/14943CB14AA0774B75A8512DD22A5C53.txt')
+							.then(response => {
+								if (!response.ok) {
+									throw new Error('File not found');
+								}
+								return response.text();
+							})
+							.then(text => {
+								document.getElementById('file-content').textContent = text;
+							})
+							.catch(error => {
+								document.getElementById('file-content').textContent = 'Error: ' + error.message;
+							});
+					</script>
+				</section>
+				<!-- ✅ End of Added Section -->
+
 			</body>
 
 			<footer>
@@ -79,7 +97,6 @@
 				</div>
 			</footer>
 		</div>
-	</div>
 	</div>
 
 	<link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css" media="screen" title="no title"
