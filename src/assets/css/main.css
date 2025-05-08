@@ -1,4 +1,6 @@
-/* General Reset */
+/* -----------------------------------
+   General Reset & Defaults
+----------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,18 +8,19 @@
 }
 
 body {
-    background: #383838;
-    color: #14fdce;
-    font-family: 'VT323';
-    font-size: 24px;
-    -webkit-font-smoothing: none;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+  background: #383838;
+  color: #14fdce;
+  font-family: 'VT323';
+  font-size: 24px;
+  -webkit-font-smoothing: none;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
+/* -----------------------------------
+   Typography & Links
+----------------------------------- */
 h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
@@ -42,6 +45,9 @@ a:hover {
   color: #031e11;
 }
 
+/* -----------------------------------
+   Buttons
+----------------------------------- */
 button {
   display: inline-block;
   background: none;
@@ -60,7 +66,9 @@ button:hover {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Fonts */
+/* -----------------------------------
+   Fonts
+----------------------------------- */
 @font-face {
   font-family: 'BentonSans';
   src: url("../fonts/BentonSans/BentonSans-Regular.woff") format("woff");
@@ -77,50 +85,69 @@ button:hover {
 
 @font-face {
   font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
   src: url(https://fonts.gstatic.com/s/vt323/v12/pxiKyp0ihIEF2isfFJA.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* Layout */
+/* -----------------------------------
+   Layout Structure
+----------------------------------- */
 .frame {
-    background-color: transparent;
-    border-radius: 0;  /* Remove border radius for full coverage */
-    border: 0.5rem solid;
-    border-bottom-color: #121212;
-    border-left-color: #080808;
-    border-right-color: #080808;
-    border-top-color: #020202;
-    box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  border: 0.5rem solid;
+  border-top-color: #020202;
+  border-right-color: #080808;
+  border-bottom-color: #121212;
+  border-left-color: #080808;
+  box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* Update piece and output for flex layout */
 .piece {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
 }
 
 .output {
-    background-color: #031e11;
-    padding: 2rem;
-    height: 100%;
-    position: relative;
-    text-shadow: 0rem 0.2rem 1rem #0c7b46;
-    overflow-y: auto;  /* Allow content to scroll if needed */
+  background-color: #031e11;
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  text-shadow: 0rem 0.2rem 1rem #0c7b46;
+  overflow-y: auto;
 }
 
+/* -----------------------------------
+   Logo and Branding
+----------------------------------- */
+.logo {
+  text-align: center;
+  width: 100%;
+  margin: 50px 20px;
+  position: relative;
+}
+
+.logo b {
+  font: 52px 'CorradineHandwriting';
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #FF00CC, 0 0 0.5em #FF00CC, 0 0 0.1em #FF00CC, 0 10px 3px #000;
+}
+
+/* -----------------------------------
+   Navigation
+----------------------------------- */
 .navbar-nav {
   float: right;
   margin-right: 15px;
@@ -137,217 +164,260 @@ button:hover {
   background-color: rgba(20, 253, 206, 0.2);
 }
 
-.logo {
-  text-align: center;
-  width: 100%;
-  /* margin: 50px auto; */
-  margin: 50px 20px;
-  position: relative;
-}
-
-.logo b {
-  font: 52px 'CorradineHandwriting';
-  color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #FF00CC, 0 0 0.5em #FF00CC, 0 0 0.1em #FF00CC, 0 10px 3px #000;
-}
-
+/* -----------------------------------
+   Animated Messages
+----------------------------------- */
 .input-text {
-    position: relative;
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
-    height: auto;
-    margin-top: 20px;
+  width: 300px;
+  margin: 20px auto 0;
+  text-align: center;
 }
 
 .message {
-    color: #14fdce;
-    overflow: hidden;
-    font-family: "VT323";
-    font-size: 22px;
-    margin: 10px auto;
-    white-space: nowrap;
-    width: 0;
-    animation: type 4s steps(60, end) forwards;
-    text-align: center;
-    display: block;
+  font-family: "VT323";
+  font-size: 22px;
+  color: #14fdce;
+  margin: 10px auto;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  text-align: center;
+  animation: type 4s steps(60, end) forwards;
 }
 
 .message:nth-of-type(2) {
-    width: 0;
-    margin: 10px auto;
-    animation: type2 8s steps(60, end) forwards;
+  animation: type2 8s steps(60, end) forwards;
 }
 
 @keyframes type {
-    from {
-        width: 0;
-    }
-    to {
-        width: 300px;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 300px;
+  }
 }
 
 @keyframes type2 {
-    0% {
-        width: 0;
-    }
-    50% {
-        width: 0;
-    }
-    100% {
-        width: 300px;
-    }
-}
-
-@keyframes blink {
-  to {
-    opacity: 0;
+  0%, 50% {
+    width: 0;
+  }
+  100% {
+    width: 300px;
   }
 }
 
-.share-post {
-    text-align: center;
-    margin: 30px 0;
-    position: relative;
-}
-
-.share-post ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.share-post li {
-    display: inline-block;
-    position: relative;
-}
-
-.share-post a {
-    color: #14fdce;
-    text-decoration: none;
-    padding: 15px;
-    font-size: 36px; /* Add this to make icons visible */
-    position: relative;
-    transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(20, 253, 206, 0.5);
-    border: none; /* Remove default border */
-    display: inline-block; /* Add this */
-}
-
-.share-post a:hover {
-    color: #031e11;
-    background-color: #14fdce;
-    box-shadow: rgba(20, 253, 206, 0.2);
-    text-shadow: 0 0 5px rgba(3, 30, 17, 0.5);
-    animation: glitch 0.3s linear infinite;
-    transform: scale(1.1);
-    border: none; /* Remove default border */
-}
-
-/* Remove the general a, a:visited styles for share-post links */
-.share-post a,
-.share-post a:visited {
-    border-bottom: none;
-}
-
-/*
-
-.share-post {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.share-post ul {
-  list-style: none;
-  padding: 0;
-}
-
-.share-post li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.share-post a {
-  color: #14fdce;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.share-post a:hover {
-   color: #FF00CC;
-   background-color: rgba(20, 253, 206, 0.2);
-}
-
-*/
-
-.player {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-/* .play {
-  background: none;
-  border: 2px solid #14fdce;
-  color: #14fdce;
-  padding: 5px 15px;
-  cursor: pointer;
-  font-family: 'VT323';
-  transition: all 0.3s ease;
-} */
-
-.player {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1000; /* Add this to ensure player stays above footer */
-  }
-  
-.play {
-    background: none;
-    border: 2px solid #14fdce;
-    color: #14fdce;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-family: 'VT323';
-    transition: all 0.3s ease;
-    position: relative; /* Add this */
-    z-index: 1001; /* Add this to ensure button stays clickable */
-  }
-
-.play:hover {
-  background: #14fdce;
-  color: #031e11;
-}
-
-/* Update footer positioning */
+/* -----------------------------------
+   Footer & Player
+----------------------------------- */
 .footer {
     position: fixed;
+    font-size: 16px;
     bottom: 0;
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     padding: 0.5rem;
     z-index: 999;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
 }
 
-/* Add some bottom margin to ensure content doesn't get hidden behind footer */
 .piece.output {
-    margin-bottom: 50px;
+  margin-bottom: 50px; /* To prevent footer overlap */
+}
+
+/* Music Player Styles */
+.player {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin-right: auto;
+    gap: 15px;
+}
+
+.music-controls {
+    position: relative;
+    z-index: 1000;
+    min-width: 20px;
+}
+
+.music-info {
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    padding-left: 10px;
+}
+
+.fa-music {
+    color: #14fdce;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.fa-music:hover {
+    text-shadow: 0 0 10px #14fdce;
+    transform: scale(1.1);
+}
+
+#musicPlayer {
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    padding-right: 50px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.play {
+    background: none;
+    border: 1px solid #14fdce;
+    color: #14fdce;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-family: 'VT323';
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.footer-box-black-content {
+    margin-left: auto;
+}
+
+/* Add to your media queries */
+@media (max-width: 768px) {
+    .player {
+        max-width: 200px;
+    }
+    
+    .footer-box-black-content small {
+        font-size: 12px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .music-info {
+        width: 150px;
+    }
+    
+    #musicPlayer {
+        font-size: 12px;
+    }
+}
+
+/* -----------------------------------
+   Share Post (Social Icons)
+----------------------------------- */
+.share-post {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.share-post ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.share-post li {
+  display: inline-block;
+  position: relative;
+}
+
+.share-post a,
+.share-post a:visited {
+  color: #14fdce;
+  text-decoration: none;
+  font-size: 36px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(20, 253, 206, 0.5);
+  border: none;
+  display: inline-block;
+}
+
+.share-post a:hover {
+  color: #031e11;
+  background-color: #14fdce;
+  box-shadow: rgba(20, 253, 206, 0.2);
+  text-shadow: 0 0 5px rgba(3, 30, 17, 0.5);
+  animation: glitch 0.3s linear infinite;
+  transform: scale(1.1);
+  border: none;
+}
+
+/* -----------------------------------
+   CRT Visual Effects
+----------------------------------- */
+.scanlines {
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.6));
+  background-size: 100% 0.3rem;
+  border-radius: 2rem;
+  position: absolute;
+}
+
+.glow {
+  animation: crt-glow 60s infinite;
+  background: radial-gradient(circle at center, #1bd459 0%, rgba(27, 212, 89, 0.88) 58%, rgba(21, 235, 92, 0.57) 80%, rgba(19, 94, 29, 0.27) 93%, rgba(10, 23, 12, 0) 100%);
+  opacity: 0.15;
+  pointer-events: none;
+  position: fixed;
+}
+
+/* Utility classes */
+.noclick {
+  pointer-events: none;
+}
+
+.floater {
+  pointer-events: auto;
+}
+
+/* -----------------------------------
+   Draggable Image (Pepega)
+----------------------------------- */
+.pepega {
+  position: fixed;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  cursor: move;
+  transition: transform 0.3s ease;
+}
+
+.pepega:hover {
+  transform: scale(1);
+}
+
+.pepega img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* -----------------------------------
+   Responsive Design
+----------------------------------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
   }
 
-/* Responsive Design */
-@media (max-width: 768px) {
   .frame {
     border-width: 0.25rem;
   }
@@ -355,6 +425,10 @@ button:hover {
   .logo {
     margin-top: 150px;
     font-size: 20px;
+  }
+
+  .logo b {
+    font-size: 30px;
   }
 
   .input-text {
@@ -371,10 +445,6 @@ button:hover {
     font-size: 18px;
   }
 
-  .logo b {
-    font-size: 30px;
-  }
-
   .navbar-nav {
     float: none;
     text-align: center;
@@ -384,68 +454,18 @@ button:hover {
   .navbar-nav > li {
     display: inline-block;
   }
-  
-  body {
-    font-size: 16px;
-  }
 
   .output {
     padding: 1rem;
   }
 }
 
-/* For extremely small screens */
 @media (max-width: 320px) {
-    .frame {
-        border-width: 0.125rem;
-    }
-
-    .output {
-        padding: 0.5rem;
-    }
-}
-
-.scanlines {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.6));
-    background-size: 100% 0.3rem;
-    border-radius: 2rem;
-    position: absolute;
-  }
-.glow {
-    -webkit-animation: crt-glow 60s infinite;
-            animation: crt-glow 60s infinite;
-    background: radial-gradient(circle at center, #1bd459 0%, rgba(27, 212, 89, 0.88) 58%, rgba(21, 235, 92, 0.57) 80%, rgba(19, 94, 29, 0.27) 93%, rgba(10, 23, 12, 0) 100%);
-    opacity: 0.15;
-    pointer-events: none;
-    position: fixed;
-  }
-.noclick {
-    pointer-events: none;
+  .frame {
+    border-width: 0.125rem;
   }
 
-.pepega {
-    position: fixed;  /* Change to fixed positioning */
-    /* top: 50%;         */
-    /* left: 50%;    */
-    cursor: move;
-    z-index: 1000;
-    width: 100px;
-    height: 100px;
-    transition: transform 0.3s ease;
-}
-
-.pepega:hover {
-    transform: scale(1);
-}
-
-.pepega img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none;
-}
-
-/* Remove any conflicting styles */
-.floater {
-    pointer-events: auto;
+  .output {
+    padding: 0.5rem;
+  }
 }

@@ -62,23 +62,21 @@
             </body>
 
             <footer>
-                <section class="player" id="player">
-                    <div class="fa fa-music"></div>
-                    <div class="content" id="musicPlayer">
-                        Music Player <br />
-                        Station: Give 'Em the Love <br />
-                        Artist: J+1 <br />
-                        <button class="play">Play music</button>
-                    </div>
-                </section>
                 <div class="footer">
-                    <div class="footer-box-black">
-                        <div class="footer-box-black-content">
-                            <p>
-                                <small>&copy; Copyright 2021, Prashanth Narasimhan, India, Inc. All Rights
-                                    Reserved.</small>
-                            </p>
+                    <!-- Replace the existing player div with this -->
+                    <div class="player" id="player">
+                        <div class="music-controls">
+                            <i class="fa fa-music fa-volume-off" id="musicToggle"></i>
                         </div>
+                        <div class="music-info">
+                            <div id="musicPlayer">
+                                Station: Give 'Em the Love - Artist: J+1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-box-black-content">
+                        <small>&copy; Copyright 2021, Prashanth Narasimhan, India, Inc. All Rights
+                            Reserved.</small>
                     </div>
                 </div>
             </footer>
