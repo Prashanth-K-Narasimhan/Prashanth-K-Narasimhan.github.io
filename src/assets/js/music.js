@@ -1,62 +1,70 @@
-/**
- * Music player helper 
- */
-const musicHelper = (function () {
-    let wrap = document.querySelector('#player');
-    let button = wrap ? wrap.querySelector('button') : null;
-    // let audio = new Audio('https://github.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/blob/a6f9776dfda4f38de433642b57950188eaaac6cc/src/assets/mp3/give_em_the_love.mp3');
-    let audio = new Audio('http://raw.githubusercontent.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/master//src/assets/mp3/give_em_the_love.mp3');
-    let step = 0.01;
-    let active = false;
-    let sto = null;
-  
-    let fadeIn = () => {
-      audio.volume += 0.01;
-      if (audio.volume >= 0.2) { audio.volume = 0.2; return; }
-      sto = setTimeout(fadeIn, 6);
-    };
-  
-    let fadeOut = () => {
-      audio.volume -= 0.02;
-      if (audio.volume <= 0.01) { audio.volume = 0; audio.pause(); return; }
-      sto = setTimeout(fadeOut, 100);
-    };
-  
-    let play = () => {
-      if (sto) clearTimeout(sto);
-      // audio.currentTime = 24
-      audio.currentTime = 24
-      active = true;
-      button.textContent = 'Stop music';
-      audio.loop = true;
-      audio.play();
-      fadeIn();
-    };
-  
-    let stop = () => {
-      if (sto) clearTimeout(sto);
-      active = false;
-      button.textContent = 'Play music';
-      fadeOut();
-    };
-  
-    button.addEventListener('click', e => {
-      e.stopPropagation();
-      e.preventDefault();
-      if (active) {
-        stop();
-        $('#pepega').hide();
+$(document).ready(function () {
+  const audio = new Audio('http://raw.githubusercontent.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/master/src/assets/mp3/give_em_the_love.mp3');
+  audio.loop = true;
+  audio.volume = 0;
+  audio.preload = 'auto';
+
+  let isPlaying = false;
+  const musicToggle = $('#musicToggle');
+  const musicInfo = $('.music-info');  // Add this line
+  let fadeInterval;
+
+  // Fade in audio
+  function fadeIn() {
+      clearInterval(fadeInterval);
+      fadeInterval = setInterval(() => {
+          if (audio.volume < 0.2) {
+              audio.volume = Math.min(0.2, audio.volume + 0.01);
+          } else {
+              clearInterval(fadeInterval);
+          }
+      }, 50);
+  }
+
+  // Fade out audio
+  function fadeOut() {
+      clearInterval(fadeInterval);
+      fadeInterval = setInterval(() => {
+          if (audio.volume > 0) {
+              audio.volume = Math.max(0, audio.volume - 0.01);
+          } else {
+              clearInterval(fadeInterval);
+              audio.pause();
+          }
+      }, 50);
+  }
+
+  // Toggle music on icon click
+  function togglePlay() {
+      if (!isPlaying) {
+          audio.play().then(() => {
+              fadeIn();
+              musicToggle.removeClass('fa-volume-off').addClass('fa-volume-up');
+              // $('#pepega').show();
+              musicInfo.show();  // Show marquee text
+              isPlaying = true;
+          }).catch(e => {
+              console.warn('Autoplay blocked or failed:', e);
+          });
+      } else {
+          fadeOut();
+          musicToggle.removeClass('fa-volume-up').addClass('fa-volume-off');
+          // $('#pepega').hide();
+          musicInfo.hide();  // Hide marquee text
+          isPlaying = false;
       }
-      else {
-        play();
-        $('#pepega').show();
+  }
+
+  // Initial state
+  musicInfo.hide();  // Hide marquee text initially
+
+  // Mute/unmute handler
+  musicToggle.on('click', togglePlay);
+
+  // First user interaction triggers music
+  $(document).one('click', function () {
+      if (!isPlaying) {
+          togglePlay();
       }
-    });
-  
-    audio.preload = 'auto';
-    audio.muted = false;
-    audio.volume = 0;
-  
-    return { play, stop };
-  })();
-  
+  });
+});
