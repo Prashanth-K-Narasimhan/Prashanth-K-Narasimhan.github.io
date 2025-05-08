@@ -1,0 +1,6 @@
+node_modules/
+dist/
+public/.well-known/
+src/assets/backup/
+.idea/
+.DS_Store
