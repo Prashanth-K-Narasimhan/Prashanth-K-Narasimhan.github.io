@@ -6,14 +6,16 @@
 }
 
 body {
-  background: #383838;
-  color: #14fdce;
-  font-family: 'VT323';
-  font-size: 24px;
-  -webkit-font-smoothing: none;
-  margin: 0;
-  min-height: 100vh;
-  position: relative;
+    background: #383838;
+    color: #14fdce;
+    font-family: 'VT323';
+    font-size: 24px;
+    -webkit-font-smoothing: none;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 h1 {
@@ -82,35 +84,41 @@ button:hover {
 
 /* Layout */
 .frame {
-  background-color: transparent;
-  border-radius: 2rem;
-  border: 1rem solid;
-  border-bottom-color: #121212;
-  border-left-color: #080808;
-  border-right-color: #080808;
-  border-top-color: #020202;
-  box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black;
-  height: 96vh;
-  position: fixed;
-  top: 2vh;
-  left: 2vw;
-  width: 96vw;
-  overflow: auto;
+    background-color: transparent;
+    border-radius: 0;  /* Remove border radius for full coverage */
+    border: 0.5rem solid;
+    border-bottom-color: #121212;
+    border-left-color: #080808;
+    border-right-color: #080808;
+    border-top-color: #020202;
+    box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Update piece and output for flex layout */
 .piece {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
 }
 
 .output {
-  background-color: #031e11;
-  padding: 3rem 2rem;
-  position: relative;
-  text-shadow: 0rem 0.2rem 1rem #0c7b46;
+    background-color: #031e11;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    text-shadow: 0rem 0.2rem 1rem #0c7b46;
+    overflow-y: auto;  /* Allow content to scroll if needed */
 }
 
 .navbar-nav {
@@ -132,72 +140,64 @@ button:hover {
 .logo {
   text-align: center;
   width: 100%;
-  margin: 50px auto;
+  /* margin: 50px auto; */
+  margin: 50px 20px;
+  position: relative;
 }
 
 .logo b {
-  font: 40px 'CorradineHandwriting';
+  font: 52px 'CorradineHandwriting';
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #FF00CC, 0 0 0.5em #FF00CC, 0 0 0.1em #FF00CC, 0 10px 3px #000;
 }
 
 .input-text {
-    /* background: #000000; */
-    overflow: hidden;
-    direction: rtl;
-    width: 289px;
-    height: 100px;
+    position: relative;
+    width: 300px;
     margin: 0 auto;
-    margin-top: 200px;
-    /* padding: 0.75rem 1rem; */
-    /* border-radius: 2px; */
-    /* border: 1px solid #ccc; */
-    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  /*  */
-  
-  .message{
-    color: #14fdce; 
+    text-align: center;
+    height: auto;
+    margin-top: 20px;
+}
+
+.message {
+    color: #14fdce;
     overflow: hidden;
     font-family: "VT323";
-    font-size: 26px;
-    /* margin: 10px 0 0 10px; */
-    margin: 0;
+    font-size: 22px;
+    margin: 10px auto;
     white-space: nowrap;
-    width: 289px;
-    animation: type 4s steps(60, end); 
-  }
-  
-  .message:nth-of-type(2){
-    animation: type2 8s steps(60, end);
-  }
-  
-  .message a{
-    color: #14fdce;
-    text-decoration: none;
-  }
-  
-  .message span{
-    animation: blink 1s infinite;
-  }
-  
-@keyframes type {
-  from {
     width: 0;
-  }
+    animation: type 4s steps(60, end) forwards;
+    text-align: center;
+    display: block;
+}
+
+.message:nth-of-type(2) {
+    width: 0;
+    margin: 10px auto;
+    animation: type2 8s steps(60, end) forwards;
+}
+
+@keyframes type {
+    from {
+        width: 0;
+    }
+    to {
+        width: 300px;
+    }
 }
 
 @keyframes type2 {
-  0% {
-    width: 0;
-  }
-  50% {
-    width: 0;
-  }
-  100% {
-    width: 100;
-  }
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 300px;
+    }
 }
 
 @keyframes blink {
@@ -205,6 +205,55 @@ button:hover {
     opacity: 0;
   }
 }
+
+.share-post {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.share-post ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.share-post li {
+    display: inline-block;
+    position: relative;
+}
+
+.share-post a {
+    color: #14fdce;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 36px; /* Add this to make icons visible */
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(20, 253, 206, 0.5);
+    border: none; /* Remove default border */
+    display: inline-block; /* Add this */
+}
+
+.share-post a:hover {
+    color: #031e11;
+    background-color: #14fdce;
+    box-shadow: rgba(20, 253, 206, 0.2);
+    text-shadow: 0 0 5px rgba(3, 30, 17, 0.5);
+    animation: glitch 0.3s linear infinite;
+    transform: scale(1.1);
+    border: none; /* Remove default border */
+}
+
+/* Remove the general a, a:visited styles for share-post links */
+.share-post a,
+.share-post a:visited {
+    border-bottom: none;
+}
+
+/*
 
 .share-post {
   text-align: center;
@@ -228,8 +277,11 @@ button:hover {
 }
 
 .share-post a:hover {
-  color: #FF00CC;
+   color: #FF00CC;
+   background-color: rgba(20, 253, 206, 0.2);
 }
+
+*/
 
 .player {
   position: fixed;
@@ -277,16 +329,16 @@ button:hover {
   color: #031e11;
 }
 
-/* Footer */
+/* Update footer positioning */
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999; /* Add this to keep footer below player */
-  height: 40px; /* Add fixed height */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    z-index: 999;
+    text-align: center;
 }
 
 /* Add some bottom margin to ensure content doesn't get hidden behind footer */
@@ -297,9 +349,7 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .frame {
-    width: 100vw;
-    left: 0;
-    border-width: 0.5rem;
+    border-width: 0.25rem;
   }
 
   .logo {
@@ -334,6 +384,25 @@ button:hover {
   .navbar-nav > li {
     display: inline-block;
   }
+  
+  body {
+    font-size: 16px;
+  }
+
+  .output {
+    padding: 1rem;
+  }
+}
+
+/* For extremely small screens */
+@media (max-width: 320px) {
+    .frame {
+        border-width: 0.125rem;
+    }
+
+    .output {
+        padding: 0.5rem;
+    }
 }
 
 .scanlines {
@@ -350,11 +419,14 @@ button:hover {
     pointer-events: none;
     position: fixed;
   }
+.noclick {
+    pointer-events: none;
+  }
 
 .pepega {
     position: fixed;  /* Change to fixed positioning */
-    top: 50%;        /* Center vertically */
-    left: 50%;   
+    /* top: 50%;         */
+    /* left: 50%;    */
     cursor: move;
     z-index: 1000;
     width: 100px;

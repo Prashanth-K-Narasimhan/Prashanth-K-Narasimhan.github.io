@@ -4,8 +4,8 @@
 const musicHelper = (function () {
     let wrap = document.querySelector('#player');
     let button = wrap ? wrap.querySelector('button') : null;
-    // let audio = new Audio('http://raw.prashanth-k-narasimhan.github.io/master/src/assets/mp3/give_em_the_love.mp3');
-    let audio = new Audio('http://raw.githubusercontent.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/master/assets/mp3/1.mp3');
+    // let audio = new Audio('https://github.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/blob/a6f9776dfda4f38de433642b57950188eaaac6cc/src/assets/mp3/give_em_the_love.mp3');
+    let audio = new Audio('http://raw.githubusercontent.com/Prashanth-K-Narasimhan/Prashanth-K-Narasimhan.github.io/master//src/assets/mp3/give_em_the_love.mp3');
     let step = 0.01;
     let active = false;
     let sto = null;

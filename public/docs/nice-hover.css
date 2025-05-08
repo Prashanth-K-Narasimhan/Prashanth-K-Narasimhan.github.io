@@ -1,0 +1,79 @@
+.share-post {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.share-post ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.share-post li {
+    display: inline-block;
+    position: relative;
+}
+
+.share-post a {
+    color: #14fdce;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(20, 253, 206, 0.5);
+}
+
+.share-post a:hover {
+    color: #031e11;
+    background-color: #14fdce;
+    box-shadow: 
+        0 0 10px #14fdce,
+        0 0 20px #14fdce,
+        0 0 40px #14fdce;
+    text-shadow: 0 0 5px rgba(3, 30, 17, 0.5);
+    animation: glitch 0.3s linear infinite;
+    transform: scale(1.1);
+}
+
+.share-post a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 253, 206, 0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.share-post a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+    2% {
+        clip-path: inset(20% 0 0 0);
+    }
+    4% {
+        clip-path: inset(0 0 20% 0);
+    }
+    6% {
+        clip-path: inset(0 0 0 20%);
+    }
+    8% {
+        clip-path: inset(0 20% 0 0);
+    }
+    10% {
+        clip-path: inset(0 0 0 0);
+    }
+}
